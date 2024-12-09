@@ -17,7 +17,7 @@
 		<mule.maven.plugin.version>4.1.1</mule.maven.plugin.version>
 		<app.name>github-actions</app.name>
 		<env>Sandbox</env>
-	</properties>
+	</properties> 
 
 	<build>
 		<plugins>
