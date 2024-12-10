@@ -4,7 +4,7 @@
 
 	<groupId>ff445969-2f29-4500-a793-e2487267c501</groupId>
 	<artifactId>github-actions</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.9</version>
 	<packaging>mule-application</packaging>
 
 	<name>github-actions</name>
@@ -12,8 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<app.runtime>4.4.0</app.runtime>
+		<app.runtime>4.4.0-20241021</app.runtime>
 		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
 		<app.name>github-actions</app.name>
 		<env>Sandbox</env>
@@ -32,7 +31,7 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
+					<classifier>---- select project type ----</classifier>
 					<cloudhub2Deployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<provider>MC</provider>
