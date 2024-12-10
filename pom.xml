@@ -4,7 +4,7 @@
 
 	<groupId>ff445969-2f29-4500-a793-e2487267c501</groupId>
 	<artifactId>github-actions</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>mule-application</packaging>
 
 	<name>github-actions</name>
@@ -32,21 +32,19 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
-					<cloudhub2Deployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<provider>MC</provider>
-						<environment>Sandbox</environment>
-						<target>Cloudhub-US-East-2</target>
-						<server>Repository</server>
-						<applicationName>${project.artifactId}</applicationName>
-						<releaseChannel>NONE</releaseChannel>
-						<replicas>1</replicas>
-						<vCores>0.1</vCores>
-						<deploymentSettings>
-							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-						</deploymentSettings>
-					</cloudhub2Deployment>
+					<cloudhubdeployment>
+					<uri>https://anypoint.mulesoft.com</uri>
+					<muleversion>4.4.0</muleversion>
+					<applicationname>mulesoft-mfa-cicd</applicationname>
+					<environment>Sandbox</environment>
+					<workertype>MICRO</workertype>
+					<region>us-east-2</region>
+					<workers>1</workers>
+					<objectstorev2>true</objectstorev2>
+					<connectedappclientid>${client.id}</connectedappclientid>
+					<connectedappclientsecret>${client.secret}</connectedappclientsecret>
+					<connectedappgranttype>client_credentials</connectedappgranttype>
+					</cloudhubdeployment>
 				</configuration>
 			</plugin>
 		</plugins>
