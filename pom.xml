@@ -4,7 +4,7 @@
 
 	<groupId>ff445969-2f29-4500-a793-e2487267c501</groupId>
 	<artifactId>github-actions</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<packaging>mule-application</packaging>
 
 	<name>github-actions</name>
@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.8.0</app.runtime>
-		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
 		<app.name>github-actions</app.name>
 		<env>Sandbox</env>
 	</properties>
