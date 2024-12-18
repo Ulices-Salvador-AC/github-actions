@@ -45,6 +45,11 @@
 						<deploymentSettings>
 							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
 						</deploymentSettings>
+						<!-- Start: SECURED PROPERTIES CI/CD -->
+						<properties>
+							<secure.key>${decryption.key}</secure.key>
+						</properties>
+						<!-- End: SECURED PROPERTIES CI/CD -->
 					</cloudhub2Deployment>
 				</configuration>
 			</plugin>
@@ -62,6 +67,12 @@
 			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.4</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.modules</groupId>
+			<artifactId>mule-secure-configuration-property-module</artifactId>
+			<version>1.2.7</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
