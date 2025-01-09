@@ -4,7 +4,7 @@
 
 	<groupId>ff445969-2f29-4500-a793-e2487267c501</groupId>
 	<artifactId>github-actions</artifactId>
-	<version>1.0.13</version>
+	<version>1.0.15</version>
 	<packaging>mule-application</packaging>
 
 	<name>github-actions</name>
@@ -16,6 +16,7 @@
 		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
 		<app.name>github-actions</app.name>
 		<env>Sandbox</env>
+		<munit.version>3.3.0</munit.version>
 	</properties>
 
 	<build>
@@ -53,6 +54,29 @@
 					</cloudhub2Deployment>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.mulesoft.munit.tools</groupId>
+				<artifactId>munit-maven-plugin</artifactId>
+				<version>${munit.version}</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+							<goal>coverage-report</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<coverage>
+						<runCoverage>true</runCoverage>
+						<formats>
+							<format>html</format>
+						</formats>
+					</coverage>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -74,6 +98,26 @@
 			<artifactId>mule-secure-configuration-property-module</artifactId>
 			<version>1.2.7</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-runner</artifactId>
+			<version>3.3.0</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-tools</artifactId>
+			<version>3.3.0</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
