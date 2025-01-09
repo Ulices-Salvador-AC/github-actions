@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ff445969-2f29-4500-a793-e2487267c501</groupId>
 	<artifactId>github-actions</artifactId>
-	<version>1.0.15</version>
+	<version>1.0.16</version>
 	<packaging>mule-application</packaging>
 
 	<name>github-actions</name>
@@ -69,9 +71,25 @@
 					</execution>
 				</executions>
 				<configuration>
+					<!-- START: MUnit coverage -->
+					<environmentVariables>
+						<secure.key>${decryption.key}</secure.key>
+					</environmentVariables>
+					<!-- END: MUnit coverage -->
 					<coverage>
 						<runCoverage>true</runCoverage>
+						<!-- START: MUnit coverage -->
+						<failBuild>true</failBuild>
+						<requiredApplicationCoverage>90</requiredApplicationCoverage>
+						<!-- <requiredResourceCoverage>50</requiredResourceCoverage> -->
+						<!-- <requiredFlowCoverage>50</requiredFlowCoverage> -->
+						<!-- END: MUnit coverage -->
 						<formats>
+							<!-- START: MUnit coverage -->
+							<format>console</format>
+							<format>sonar</format>
+							<format>json</format>
+							<!-- END: MUnit coverage -->
 							<format>html</format>
 						</formats>
 					</coverage>
